@@ -1,0 +1,14 @@
+{%extends "master.html"%}
+{%block contenido%}
+<div class="container">
+	<form class="form-inline " role="form" enctype="multipart/form-data" method="post">{% csrf_token %}
+		<div class="form-group">
+			{{r.as_p}}
+			<input class="btn btn-success btn-block" value="Registarse" type="submit" name="Registrar">
+			<button onClick="location.href = '../'" type="button" class="btn btn-success btn-block" aria-label="Left Align">
+			<span aria-hidden="true">Cancelar</span>
+		</button>
+		</div>
+	</form>
+</div>
+{%endblock%}

@@ -1,0 +1,39 @@
+{%extends "master.html"%}
+{%load staticfiles%}
+{%block contenido%}
+<h3 align="center">Lista de Productos</h3> </span>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<button onClick="location.href = 'crearPro'" type="button" class="btn btn-success" aria-label="Left Align">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+		</button>
+		<button onClick="location.href = '../'" type="button" class="btn btn-success" aria-label="Left Align">
+			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+		</button>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table table-striped">
+			<tr>
+			<td>Nombre</td>
+			<td>Precio</td>
+			<td>Descripcion</td>
+			<td>Imagen</td>
+			<td>Opciones</td>
+		</tr>
+		{%for c in productos%}
+		<tr>
+			<td>{{c.Nombre}}</td>
+			<td>{{c.Precio}}</td>
+			<td>{{c.Descripcion}}</td>
+			<td><img src="{{c.Imagen.url}}"></td>
+			<td><a href="eliminarPro?id={{c.id}}"><span class="glyphicon glyphicon-remove" ari-hidden="true"></span></a> | <a href="modificarPro?id={{c.id}}"><span class="glyphicon glyphicon-pencil" ari-hidden="true"></span></a></span></a></td>
+		</tr>
+				{%endfor%}
+		</table>
+	</div>
+</div>
+{%endblock%}

@@ -1,0 +1,23 @@
+{%extends "master.html"%}
+{%block contenido%}
+
+{% if user.is_authenticated %}
+    <button type="submit" class="btn btn-primary" >Bienvenido {{ user.username }}</button>
+    <button type="submit" class="btn btn-primary" onClick="location.href = 'Logout'">Salir</button>
+
+  {% else %}
+  
+    
+  {% endif %}
+  <br><br>
+<select name="ad">
+<option>Eliga una opcion</option>
+
+	<option value="1" onClick="location.href = 'listarCli'">Lista de Clientes</option>
+	<option value="2" onClick="location.href = 'listarRes'">Lista de Restaurantes</option>
+	<option value="3" onClick="location.href = 'listarPro'">Lista de Productos</option>
+	<option value="4" onClick="location.href = 'listarPed'">Lista de Pedidos </option>
+</select>
+
+
+{%endblock%}
